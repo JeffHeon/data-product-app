@@ -41,6 +41,11 @@ fluidPage(
   
   mainPanel(
     plotOutput('expDistplot'),
-    plotOutput('avgDistplot')
+    plotOutput('avgDistplot'),
+    h4('Documentation'),
+    p('The Central Limit Theorem tells us the distribution of sampling of a distribution is normal, even though the original distribution might not be.'),
+    p('The top plot is an histogram of an exponential distribution, which does not follow a normal distribution. Parameters on the left side lets user specify the sample size of this exponential distribution as well as its rate.'),
+    p('For the bottom plot, many different exponential distributions and generated. A distribution of the average of each exponential distribution is calculated. Paremeters on the left let us specify how many different exponential distribution are generated as well as the size of each distribution. Finally the mean of the averages is calculated and is displayed by a vertical line.'),
+    p('Playing around with the parameters shows us how how well or bad the theorem holds for small or big samples.')
   )
 )

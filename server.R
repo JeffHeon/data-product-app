@@ -1,5 +1,4 @@
 library(shiny)
-library(ggplot2)
 
 function(input, output) {
   
@@ -17,10 +16,10 @@ function(input, output) {
     # Let's get the distribution of averages of exponentials
     averages = NULL
     for (i in 1 : input$avgNumber) averages = c(averages, mean(rexp(input$avgSampleSize,input$expDistRate)))  
-
+    meanAvgs <- mean(averages)
+    
     hist(averages, col='lightblue',main='Averages of Exponentials distribution', breaks = breaks,
          xlab = NULL)
-    abline(v = mean(averages), col = "blue", lwd = 2)
+    abline(v = meanAvgs, col = "blue", lwd = 2)
   })
-  
 }
